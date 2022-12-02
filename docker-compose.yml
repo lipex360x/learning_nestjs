@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    container_name: iniciando-nestjs-app
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+
+  db:
+    image: bitnami/mysql
+    container_name: iniciando-nestjs-db
+    tty: true
+    ports:
+      - "33006:3306"
+    volumes:
+      - iniciando-nestjs-dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'nestjs'
+      MYSQL_USER: 'dev'
+      MYSQL_PASSWORD: 'dev'
+      MYSQL_ROOT_PASSWORD: 'dev'
+
+volumes:
+  iniciando-nestjs-dbdata:
+    external: true
