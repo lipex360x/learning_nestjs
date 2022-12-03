@@ -6,8 +6,6 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
-  private entitiesDir = '../../../database/entities';
-
   createTypeOrmOptions() {
     return {
       type: 'mysql',
@@ -18,7 +16,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       username: process.env.DB_USERNAME || 'root',
       password: process.env.DB_PASSWORD || '',
       database: `${process.env.DB_NAME || 'nestdb'}`,
-      entities: [`${this.entitiesDir}/*.entity{.ts,.js}`],
+      entities: ['src/*/*.entity.ts'],
       autoLoadEntities: true,
       logging: process.env.TYPEORM_LOGGING === 'true',
       synchronize: process.env.NODE_ENV !== 'production',
