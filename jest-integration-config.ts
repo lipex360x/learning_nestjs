@@ -1,7 +1,7 @@
 import type { Config } from 'jest';
 import { resolve } from 'path';
 
-import defaultConfig from 'jest.config';
+import defaultConfig from './jest.config';
 
 const config: Config = {
   ...defaultConfig,
@@ -12,7 +12,7 @@ const config: Config = {
   ),
   globalTeardown: resolve(
     __dirname,
-    './src/shared/configs/jest-testcontainer/teardown.js',
+    './src/shared/configs/jest-testcontainer/teardown.ts',
   ),
   preset: 'ts-jest',
   roots: ['<rootDir>/test/integration'],
