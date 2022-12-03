@@ -6,14 +6,8 @@ import defaultConfig from './jest.config';
 const config: Config = {
   ...defaultConfig,
 
-  globalSetup: resolve(
-    __dirname,
-    './src/shared/configs/jest-testcontainer/setup.ts',
-  ),
-  globalTeardown: resolve(
-    __dirname,
-    './src/shared/configs/jest-testcontainer/teardown.ts',
-  ),
+  globalSetup: resolve(__dirname, './test/configs/setup.ts'),
+  globalTeardown: resolve(__dirname, './test/configs/teardown.ts'),
   preset: 'ts-jest',
   roots: ['<rootDir>/test/integration'],
   transform: {
