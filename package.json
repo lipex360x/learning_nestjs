@@ -21,7 +21,8 @@
     "test:integration": "npm test -- -c jest-integration-config.ts",
     "test:unit": "npm test -- -c jest-unit-config.ts --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "seed": "ts-node -r tsconfig-paths/register seeds/bootstrap.ts"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
