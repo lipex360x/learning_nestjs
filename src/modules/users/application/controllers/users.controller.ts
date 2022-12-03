@@ -3,7 +3,7 @@ import { RouteDecorator } from 'src/shared/helpers/decorators/route';
 import { GetUser } from 'src/shared/helpers/decorators';
 import { JwtUser } from 'src/shared/helpers/types';
 import { CreateUserDto } from '../dtos';
-import { CreateUserUseCase } from '../useCases/create-user.usecase';
+import { CreateUserUseCase } from '../useCases/create.usecase';
 
 @Controller('users')
 export class UsersController {
