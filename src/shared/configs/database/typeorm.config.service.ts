@@ -17,7 +17,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       port: +(process.env.DB_PORT || 3306),
       username: process.env.DB_USERNAME || 'root',
       password: process.env.DB_PASSWORD || '',
-      database: `${process.env.DB_NAME || 'ms8'}`,
+      database: `${process.env.DB_NAME || 'nestdb'}`,
       entities: [`${this.entitiesDir}/*.entity{.ts,.js}`],
       autoLoadEntities: true,
       logging: process.env.TYPEORM_LOGGING === 'true',
